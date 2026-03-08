@@ -17,12 +17,22 @@ public class EmailApplication {
 		SpringApplication.run(EmailApplication.class, args);
 	}
 
+//	@EventListener(ApplicationReadyEvent.class)
+//	public void triggerMail() throws MessagingException {
+//
+//		service.sendSimpleEmail("m.nithmali@gmail.com",
+//				"This is Email Body with Attachment...",
+//				"This email has attachment");
+//
+//	}
+
 	@EventListener(ApplicationReadyEvent.class)
 	public void triggerMail() throws MessagingException {
 
-		service.sendSimpleEmail("m.nithmali@gmail.com",
+		service.sendEmailWithAttachment("m.nithmali@gmail.com",
 				"This is Email Body with Attachment...",
-				"This email has attachment");
+				"This email has attachment",
+				"C:\\Users\\mithula\\Downloads\\DSC_8610.jpg");
 
 	}
 
